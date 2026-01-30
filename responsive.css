@@ -1,0 +1,200 @@
+/* =========================
+   RESPONSIVE (MOBILE ≤768px)
+   ========================= */
+@media (max-width: 768px) {
+  /* container */
+  .main-container {
+    width: 90%;
+  }
+
+  /* =========================
+     NAV (Sticky + Burger Drawer)
+     ========================= */
+  header .nav {
+    position: sticky;
+    top: 0;
+    z-index: 9998;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  /* burger */
+  header .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    z-index: 9999;
+  }
+
+  header .burger div {
+    width: 24px;
+    height: 2px;
+    background: #000;
+    margin: 4px 0;
+  }
+
+  /* hide menu desktop */
+  header nav ul {
+    display: none;
+  }
+
+  /* drawer menu when active */
+  header nav ul.active {
+    display: flex;
+    list-style: none;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 78%;
+    max-width: 320px;
+    height: 100vh;
+
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 90px 20px 20px;
+    margin: 0;
+    gap: 10px;
+
+    z-index: 9997;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+  }
+
+  header nav ul li {
+    width: 100%;
+  }
+
+  header nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 10px;
+    color: #232e35;
+    font-weight: 500;
+  }
+
+  header nav ul li a:hover {
+    background: #f3f3f3;
+  }
+
+  /* tombol CV full */
+  header nav ul li a .btn {
+    width: 100%;
+  }
+
+  /* overlay (mulai di bawah nav sticky biar "Welcome" nggak gelap) */
+  header .nav-overlay {
+    position: fixed;
+    top: 72px; /* mulai di bawah header */
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+
+    z-index: 9996;
+  }
+
+  header .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* =========================
+     HERO
+     ========================= */
+  #hero {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero-right img {
+    width: 100%;
+  }
+
+  /* =========================
+     SKILLS (1 kolom + badge center)
+     ========================= */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skills-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skills-right > p {
+    width: 100%;
+    text-align: flex-start;
+    margin-bottom: 14px;
+  }
+
+  /* grid badge CENTER */
+  .skills-icons {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+
+    justify-content: center;
+    justify-items: center; /* ✅ kartu di tengah */
+  }
+
+  /* badge content CENTER */
+  .skill-badge {
+    width: 100%;
+    max-width: 190px; /* ✅ biar ga melebar & tetap rapi */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* ✅ icon + text di tengah */
+    gap: 10px;
+  }
+
+  /* optional: rapihin padding skills container biar pas mobile */
+  #skills .main-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  header nav ul {
+    display: none !important; /* paksa hilang di mobile */
+  }
+
+  header nav ul.active {
+    display: flex !important; /* muncul hanya saat dibuka */
+  }
+}
+
